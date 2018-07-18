@@ -17,7 +17,6 @@ from nltk.corpus import wordnet as wn
 
 
 def text_to_wordlist(text):
-    text = re.sub(r"[^A-Za-z0-9]", " ", text)
     text = re.sub(r"what's", "", text)
     text = re.sub(r"What's", "", text)
     text = re.sub(r"\'s", " ", text)
@@ -72,6 +71,8 @@ def text_to_wordlist(text):
     text = re.sub(r"Find", "find", text) 
     text = re.sub(r"banglore", "Banglore", text)
     text = re.sub(r" J K ", " JK ", text)
+    
+    text = re.sub(r"[^A-Za-z0-9]", " ", text)
     return(text)
 
 def concat_words(df2):
